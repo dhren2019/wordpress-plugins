@@ -1,6 +1,6 @@
 <?php
 /*
-*Plugin Name: Mi Segundo plugin
+*Plugin Name: Menu footer plugin
 *Plugin URI: https://Goraiko.es
 *Description: Este es un plugin desarrollado por Dhren para Wordpress para ubicaciones de menu.
 *Version: 0.01
@@ -26,7 +26,7 @@ add_action('init', 'dn_menu_footer');
 
 function dn_mostrar_menu() {
 
-    //? Abria que colocar desde opciones hasta wp_nav_menu dentro de footer.php o menu o donde se quiera mostrar el menu.
+    //? Habria que colocar desde opciones hasta wp_nav_menu dentro de footer.php o menu o donde se quiera mostrar el menu.
     $opciones = array { 
         'theme_location' => 'ubicacion del pie'
     };
