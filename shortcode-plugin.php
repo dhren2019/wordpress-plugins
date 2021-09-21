@@ -8,11 +8,12 @@
 *Author URI: https://Goraiko.es
 *License: GLP 2+
 */
+
 //Shortcode simple
 function dn_shortcode() {
  return ( 
-     <div class="columns">
- <ul class="price">
+    <div class="columns">
+    <ul class="price">
    <li class="header">Basic</li>
    <li class="grey">$ 9.99 / year</li>
    <li>10GB Storage</li>
