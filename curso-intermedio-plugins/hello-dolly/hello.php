@@ -97,4 +97,7 @@ function dolly_css() {
 	";
 }
 
-add_action( 'admin_head', 'dolly_css' );
+function hello_dolly_menu(){
+	add_menu_page( 'Hello dolly', 'Hello dolly', 'manage_options', '/nuestro-fichero.php' )
+}
+add_action( 'admin_menu', 'hello_dolly_menu' );
