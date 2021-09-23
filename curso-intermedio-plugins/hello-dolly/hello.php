@@ -98,6 +98,48 @@ function dolly_css() {
 }
 
 function hello_dolly_menu(){
-	add_menu_page( 'Hello dolly', 'Hello dolly', 'manage_options', '/nuestro-fichero.php' )
+	add_menu_page( 'Hello dolly', 'Hello dolly', 'manage_options', '/nuestro-fichero.php' );
 }
 add_action( 'admin_menu', 'hello_dolly_menu' );
+
+class HelloDollyWidget extends WP_Widget {
+
+	public function __construct()
+	{
+		$params = array (
+			'classname'   => 'HelloDollyWidget',
+			'description' => 'Mostramos frases de Hello Dolly Widget'
+		);
+		parent::__construct('HelloDollyWidget', 'HelloDolly', $params);
+	}
+	public function widget( $args, $instance ){
+		
+	}
+
+	public function form( $instance){
+		
+		if (isset($instance['title'])) {
+			$title = $instance['title'];
+		}else {
+			$title = $instance['Nuevo titulo'];
+		}
+
+		?>
+		// Añade en el widget un imput en blanco
+		<p>
+			<label for="<?php echo $this->get_field_name('title'); ?>"></label>
+			<input type="text" value="" id="<?php echo $this->get_field_id('title'); ?>" class="" name="<?php echo $this->get_field_name('title'); ?>" />
+		</p>
+		<?php
+	}
+	public function update($new_instance, $old_instance){
+		
+	}
+}
+
+function hello_dolly_register_widget()
+{
+	register_widget('HelloDollyWidget');
+}
+
+add_action('widgets_init', 'hello_dolly_register_widget');
