@@ -25,5 +25,6 @@ if (! current_user_can ('manage_options') ) wp_die(__('No tienes permisos')) ;
                 </td>
             </tr>
         </table>
+        <?php submit_button(); ?>
     </form>
 </div>
