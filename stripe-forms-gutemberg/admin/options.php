@@ -15,12 +15,13 @@ if (! current_user_can ('manage_options') ) wp_die(__('No tienes permisos')) ;
             <tr>
                 <td>
                     <label ><?php _e('Stripe API secreta', 'stripe-forms-gutemberg') ?>:</label>
-                    <input type="text" name="stripe_forms_gutemberg_api_secret" id="stripe_forms_gutemberg_api_secret" value="">
+                    <input type="text" name="stripe_forms_gutemberg_api_secret" id="stripe_forms_gutemberg_api_secret" value="<?php echo get_option( 'stripe_forms_gutemberg_api_secret'); ?>">
                 </td>
             </tr>
             <tr>
                 <td>
                     <label ><?php _e('Stripe API pública', 'stripe-forms-gutemberg') ?></label>
+                    <input type="text" name="stripe_forms_gutemberg_api_public" id="stripe_forms_gutemberg_api_public" value="<?php echo get_option( 'stripe_forms_gutemberg_api_public'); ?>">
                 </td>
             </tr>
         </table>
