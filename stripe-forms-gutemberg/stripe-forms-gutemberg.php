@@ -38,3 +38,23 @@ function stripe_forms_gutemberg_settings()
 }
 
 add_action('admin_init', 'stripe_forms_gutemberg_settings');
+
+//Función para registrar el bloque en gutemberg
+
+function gutemberg_stripe_forms_register_block()
+{
+    wp_register_script( 
+        'stripe-forms',
+        plugins_url('stripe-block.js', __FILE__),
+        array('wp-blocks', 'wp-element', 'wp-i18n'),
+        filemtime(plugin_dir_path( __FILE__ ).'stripe-block.js')
+    );
+
+    register_block_type('gutemberg-dhren/stripe-forms', array(
+
+        'editor_script' => 'stripe-forms'
+    ) );
+}
+
+add_action('init', 'gutemberg_stripe_forms_register_block');
+

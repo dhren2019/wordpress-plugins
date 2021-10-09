@@ -12,7 +12,7 @@ if (isset($token) && !empty($token)) {
  
     try {
         $charge = Stripe\Charge::create([
-            "amount" => 1000,
+            "amount" => 1000,//1000 cent 1eur
             "currency" => "eur",
             "source" => $token,
             "description" => "Stripe Form Gutenberg"
