@@ -8,8 +8,8 @@ if (! current_user_can ('manage_options') ) wp_die(__('No tienes permisos')) ;
     <p><?php _e('Stripe Forms Gutemberg', 'stripe-forms-gutemberg') ?></p>
     <form method="POST" action="options.php">
         <?php
-            settings_fields( 'stripe-forms-gutemberg-settings-group' );
-            do_settings_sections( 'stripe-forms-gutemberg-settings-group' );
+            settings_fields( 'stripe_forms_gutemberg_settings_group' );
+            do_settings_sections( 'stripe_forms_gutemberg_settings_group' );
         ?>
         <table class="form-table">
             <tr>

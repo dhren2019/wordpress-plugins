@@ -1,39 +1,37 @@
-( function ( blocks, element, blockEditor, i18n ) {
+( function ( blocks, element, i18n ) {
     var el = element.createElement;
     var useBlockProps = blockEditor.useBlockProps;
     var __ = i18n.__;
  
     var blockStyle = {
-        backgroundColor: '#900',
+        backgroundColor: '#000',
         color: '#fff',
         padding: '20px',
     };
  
-    blocks.registerBlockType( 'gutenberg-dhren/stripe-forms', {
-        apiVersion: 2,
+    blocks.registerBlockType( 'gutemberg-dhren/stripe-forms', {
         title: __('Stripe Forms', 'stripe-forms-gutemberg'),
         icon: 'universal-access-alt',
-        category: 'design',
+        category: 'layout',
         example: {},
         edit: function () {
-            var blockProps = useBlockProps( { style: blockStyle } );
-            return el(
-                'p',
-                blockProps,
-                'Hello World (from the editor).'
+           return el (
+            'p',
+            { style: blockStyle },
+            'Stripe form'
             );
         },
         save: function () {
-            var blockProps = useBlockProps.save( { style: blockStyle } );
-            return el(
-                'p',
-                blockProps,
-                'Hello World (from the frontend).'
-            );
+            return el ( 
+                'iframe',
+                { 
+                    src:'',
+                    frameborder:0,
+                } );
+            
         },
     } );
 } )( window.wp.blocks, 
-    window.wp.element, 
-    window.wp.blockEditor,
+    window.wp.element,
     window.wp.i18n
      );
